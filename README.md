@@ -6,13 +6,14 @@ In this analysis, we used SQL to sort through the various Employment data from P
 
 ## Results: 
 Provide a bulleted list with four major points from the two analysis deliverables. Use images as support where needed.
-###Deliverable 1 Summary 
+
+#### Deliverable 1 Results 
 - Only 2 managers are in the retirement eligible group. This is not a position that will need recruitment. 
 - The large majority of the retiremenet eligible group are either Engineers/Senior Engineers or Staff/Senior Staff. Almost 90,000 employees (84,133) encompass these four categories. This is 93% of the retirement group.  
 - Engineers and Staff titles will need to be heavily recruited. 
 - There will also need to be furhter analysis of the current staff and engineers to see how many current employees are potential Senior Enigneers or Senior Staff. If there is not enough current employees for these positions, then outside recruitment will be necessary in the future. 
 
-###Deliverable 2 Summary 
+#### Deliverable 2 Results 
 - There are 1549 employees who qualify as eligible to be mentors in the mentorship program.  
 - Most are have either Enigineers/Senior Engineers or Staff/Senior Staff job titles. 
 
