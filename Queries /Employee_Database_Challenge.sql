@@ -52,3 +52,49 @@ ON (e.emp_no = t.emp_no)
 WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
       AND (de.to_date = '9999-01-01')
 ORDER BY e.emp_no;
+
+
+--ADDITIONAL QUERIES 
+-- retrieve the number of employees in their most recent roles in the mentorship group. 
+
+
+SELECT Title, COUNT(title) AS "count_titles"
+INTO Mentorship_Titles
+FROM mentorship_eligibility
+GROUP BY title
+ORDER BY "count_titles" DESC;
+
+-- title totals for all employees 
+
+-- first put all employees into groups by title 
+
+SELECT  em.emp_no,
+        em.first_name,
+        em.last_name,
+        t.title,
+        t.from_date,
+        t.to_date
+INTO all_titles_info
+FROM employees as em
+    INNER JOIN titles as t
+        ON (em.emp_no = t.emp_no)
+ORDER BY em.emp_no;
+
+-- then count totals of titles for all employees 
+SELECT Title, COUNT(title) AS "count_total_titles"
+INTO all_Titles
+FROM all_titles_info
+GROUP BY title
+ORDER BY "count_total_titles" DESC;
+
+-- how many retiring aka new employees per mentor eligible. 
+
+select rt.title,
+		rt.count_titles,
+	mt.count_titles,
+((rt.count_titles)/(mt.count_titles)) as "mentees_per_mentor"
+--into mentorship_ratios
+from retiring_titles as rt 
+	left join Mentorship_Titles as mt
+GROUP BY rt.title
+order BY "mentees_per_mentor" DESC;
